@@ -6,4 +6,4 @@ before_install:
   - docker build -t gruszatv/sslv  -f Dockerfile.dev .
 
 script:
-  - docker run gruszatv/sslv npm run test -- --coverage
+  - docker run gruszatv/sslv npm test
