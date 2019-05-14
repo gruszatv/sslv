@@ -9,3 +9,20 @@ cache: npm
 
 script:
   - docker run gruszatv/sslv npm test
+
+
+deploy:
+  provider: elasticbeanstalk
+  region: "eu-central-1"
+  app: "sslv"
+  env: "Sslv-env"
+  bucket_name: "elasticbeanstalk-eu-central-1-868884770340"
+  bucket_path: "sslv"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key:
+    secure: "$AWS_SECRET_KEY"
+
+
+
